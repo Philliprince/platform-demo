@@ -11,12 +11,23 @@
         tr:nth-child(even) {
             background: #f9f9f9;
         }
+
+        td,
+        th {
+            text-align: center;
+        }
     </style>
 </head>
 
 <body>
-    <div class="container" style="padding-top: 5%">
-        <div class="row">
+    <div class="container">
+        <div class="local cleafix" style="padding-top:5%">
+            <a>资源管理</a>
+            <em>&gt;</em>
+            <a href="#">中间件管理</a>
+        </div>
+        <br>
+        <div class="row" style="padding: 1% 0%">
             <div class="col-lg-12 col-md-12 col-sm-12">
                 <button type="button" class="btn btn-primary" style="background-color:#00caab; border: none">
                     <span class="glyphicon glyphicon-plus Btn"></span>&nbsp;录入</button>
@@ -31,15 +42,16 @@
     </div>
     <div class="container">
         <table class="table table-bordered">
-            <caption>边框表格布局</caption>
             <thead>
                 <tr style="background-color:#f9f9f9">
                     <th>
                         <input type="checkbox" id="">
                     </th>
-                    <th>名称</th>
-                    <th>城市</th>
-                    <th>邮编</th>
+                    <th>中间件名称</th>
+                    <th>接入功能描述</th>
+                    <th>开放形式</th>
+                    <th>状态</th>
+                    <th>操作</th>
                 </tr>
             </thead>
             <tbody>
@@ -47,26 +59,47 @@
                     <th>
                         <input type="checkbox" id="">
                     </th>
+                    <td>移动能力开放平台</td>
+                    <td>用户实名制查询，用户定位信息查询，机型查询等</td>
+                    <td>Restful</td>
+                    <td>正常</td>
+                    <td>
+                        <button type="button" class="btn btn-primary btn-sm" style="background-color:#99ccff; border: none">
+                            <span class="glyphicon glyphicon-search"></span>查看</button>
+                        <button type="button" class="btn btn-primary btn-sm" style="background-color:#99ccff; border: none">
+                            <span class="glyphicon glyphicon-trash"></span>删除</button>
+                    </td>
+                </tr>
+                <tr>
+                    <th>
+                        <input type="checkbox" id="">
+                    </th>
+                    <td>蚂蚁金服开放平台</td>
+                    <td>资金结算、帐户管理、信用评估</td>
+                    <td>Restful/SDK</td>
+                    <td>正常</td>
+                    <td>
+                        <button type="button" class="btn btn-primary btn-sm" style="background-color:#99ccff; border: none">
+                            <span class="glyphicon glyphicon-search"></span>查看</button>
+                        <button type="button" class="btn btn-primary btn-sm" style="background-color:#99ccff; border: none">
+                            <span class="glyphicon glyphicon-trash"></span>删除</button>
+                    </td>
+                </tr>
+                <!-- <tr>
+                    <th>
+                        <input type="checkbox" id="">
+                    </th>
                     <td>Tanmay</td>
                     <td>Bangalore</td>
+                    <td>正常</td>
                     <td>560001</td>
-                </tr>
-                <tr>
-                    <th>
-                        <input type="checkbox" id="">
-                    </th>
-                    <td>Sachin</td>
-                    <td>Mumbai</td>
-                    <td>400003</td>
-                </tr>
-                <tr>
-                    <th>
-                        <input type="checkbox" id="">
-                    </th>
-                    <td>Uma</td>
-                    <td>Pune</td>
-                    <td>411027</td>
-                </tr>
+                    <td>
+                        <button type="button" class="btn btn-primary btn-sm" style="background-color:#99ccff; border: none">
+                            <span class="glyphicon glyphicon-search"></span>查看</button>
+                        <button type="button" class="btn btn-primary btn-sm" style="background-color:#99ccff; border: none">
+                            <span class="glyphicon glyphicon-trash"></span>删除</button>
+                    </td>
+                </tr> -->
             </tbody>
         </table>
     </div>
