@@ -1,0 +1,202 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>资源管理——流量策略管理</title>
+    <link rel="stylesheet" href="http://cdn.static.runoob.com/libs/bootstrap/3.3.7/css/bootstrap.min.css">
+    <style type="text/css">
+        tr:nth-child(even) {
+            background: #f9f9f9;
+        }
+    </style>
+    <style type="text/css">
+        th{
+            text-align:center;/** 设置水平方向居中 */
+            vertical-align:middle/** 设置垂直方向居中 */
+        }
+        td{
+            text-align:center;/** 设置水平方向居中 */
+            vertical-align:middle/** 设置垂直方向居中 */
+        }
+    </style>
+</head>
+
+<body>
+    <div class="container" style="padding-top: 5%">
+        <div class="local cleafix">
+            <a>资源管理</a>
+            <em>&gt;</em>
+            <a href="llclgl.html">流量策略管理</a>
+        </div>
+        <br>
+        <div class="row">
+            <div class="col-lg-12 col-md-12 col-sm-12">
+                <button id="myModal" type="button" class="btn btn-primary" style="background-color:#00caab; border: none">
+                    <span class="glyphicon glyphicon-plus Btn"></span>&nbsp;录入</button>
+                <button type="button" class="btn btn-primary" style="background-color:#6ed1f1; border: none">
+                    <span class="glyphicon glyphicon-pencil Btn"></span>&nbsp;编辑</button>
+                <button type="button" class="btn btn-primary" style="background-color:#99ccff; border: none">
+                    <span class="glyphicon glyphicon-search Btn"></span>&nbsp;查看</button>
+                <button type="button" class="btn btn-primary" style="background-color:white;border-color:gray; color:gray">
+                    <span class="glyphicon glyphicon-search Btn"></span>&nbsp;检索</button>
+            </div>
+        </div>
+        <br>
+    </div>
+    <div class="container">
+        <table class="table table-bordered">
+            <!-- <caption>边框表格布局</caption> -->
+            <thead>
+                <tr style="background-color:#f9f9f9">
+                    <th>
+                        <input type="checkbox" id="">
+                    </th>
+                    <th>流量策略名称</th>
+                    <th>所属组织</th>
+                    <th>响应时间</th>
+                    <th>吞吐量</th>
+                    <th>并发用户数</th>
+                    <th>QPS</th>
+                    <th>适用API</th>
+                    <th>操作</th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr>
+                    <th>
+                        <input type="checkbox" id="">
+                    </th>
+                    <td>高优先级流量策略</td>
+                    <td>用户1</td>
+                    <td>1ms</td>
+                    <td>1000</td>
+                    <td>1000</td>
+                    <td>10</td>
+                    <td>云存储API、支付API、充电API</td>
+                    <td><button type="button" class="btn btn-primary btn-sm" style="background-color:#2fd6d0; border: none">
+                        <span class="glyphicon glyphicon-pencil"></span>&nbsp;更新</button>
+                    </td>
+                </tr>
+                <tr>
+                    <th>
+                        <input type="checkbox" id="">
+                    </th>
+                    <td>一般优先级流量策略</td>
+                    <td>用户2</td>
+                    <td>0.5ms</td>
+                    <td>2000</td>
+                    <td>4000</td>
+                    <td>30</td>
+                    <td>缴费API</td>
+                    <td><button type="button" class="btn btn-primary btn-sm" style="background-color:#2fd6d0; border: none">
+                        <span class="glyphicon glyphicon-pencil"></span>&nbsp;更新</button>
+                    </td>
+                </tr>
+                <tr>
+                    <th>
+                        <input type="checkbox" id="">
+                    </th>
+                    <td>低优先级流量策略</td>
+                    <td>用户3</td>
+                    <td>0.2ms</td>
+                    <td>3000</td>
+                    <td>8000</td>
+                    <td>40</td>
+                    <td>交电费API、评价API、营销API</td>
+                    <td><button type="button" class="btn btn-primary btn-sm" style="background-color:#2fd6d0; border: none">
+                        <span class="glyphicon glyphicon-pencil"></span>&nbsp;更新</button>
+                    </td>
+                </tr>
+            </tbody>
+        </table>
+    </div>
+
+    <!-- 录入模态框（Modal） -->
+<div class="modal fade" id="myModal_output" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true">
+        <div class="modal-dialog" style="width: 800px"> <!--修改bootstrap modal模态框的宽度-->
+            <div class="modal-content">
+                <div class="modal-header">
+                    <button type="button" class="close" data-dismiss="modal" aria-hidden="true">&times;</button>
+                    <h3 class="modal-title" id="myModalLabe">新增流量策略</h3>
+                </div>
+                <div class="modal-body">
+                    <div class="row">
+                        <form class="form-horizontal" id="opform_data" role="form">
+                            <!-- <div class="form-group row">
+                                <label for="id" class="col-lg-3 col-md-3 col-sm-3 control-label form_border"
+                                       style="display: none">id</label>
+                                <div class="col-lg-8 col-md-8 col-sm-8 form_border"
+                                     style="display: none">
+                                    <input type="text" class="form-control input clear" id="id1" name="id"  >
+                                </div>
+                            </div> -->
+                            <div class="form-group row">
+                                <label for="exit" class="col-lg-2 col-md-2 col-sm-2 control-label form_border"
+                                       style="line-height: 1.5">流量策略名称</label>
+                                <div class="col-lg-2 col-md-2 col-sm-2">
+                                    <input type="text" class="form-control input clear" id="exit1" name="exit"  >
+                                </div>
+                                <label for="exit" class="col-lg-2 col-md-2 col-sm-2 control-label form_border"
+                                           style="line-height: 1.5">所属组织</label>
+                                <div class="col-lg-2 col-md-2 col-sm-2">
+                                    <input type="text" class="form-control input clear" id="exit1" name="exit"  >
+                                </div>
+                            </div>
+                            <div class="form-group row">
+                                <label for="exit" class="col-lg-2 col-md-2 col-sm-2 control-label form_border"
+                                               style="line-height: 1.5">响应时间</label>
+                                <div class="col-lg-2 col-md-2 col-sm-2">
+                                    <input type="text" class="form-control input clear" id="exit1" name="exit"  >
+                                </div>
+                                <label for="exit" class="col-lg-2 col-md-2 col-sm-2 control-label form_border"
+                                                   style="line-height: 1.5">吞吐量</label>
+                                    <div class="col-lg-2 col-md-2 col-sm-2">
+                                        <input type="text" class="form-control input clear" id="exit1" name="exit"  >
+                                    </div>
+                            </div>
+                            <div class="form-group row">
+                                    <label for="exit" class="col-lg-2 col-md-2 col-sm-2 control-label form_border"
+                                                   style="line-height: 1.5">并发用户数</label>
+                                    <div class="col-lg-2 col-md-2 col-sm-2">
+                                        <input type="text" class="form-control input clear" id="exit1" name="exit"  >
+                                    </div>
+                                    <label for="exit" class="col-lg-2 col-md-2 col-sm-2 control-label form_border"
+                                                   style="line-height: 1.5">QPS</label>
+                                    <div class="col-lg-2 col-md-2 col-sm-2">
+                                        <input type="text" class="form-control input clear" id="exit1" name="exit"  >
+                                    </div>
+                            </div>
+                            <div class="form-group row">
+                                    <label for="exit" class="col-lg-2 col-md-2 col-sm-2 control-label form_border"
+                                                   style="line-height: 1.5">适用API</label>
+                                    <div class="col-lg-2 col-md-2 col-sm-2">
+                                        <input type="text" class="form-control input clear" id="exit1" name="exit"  >
+                                    </div>
+                            </div>
+                        </form>
+                    </div>
+                </div>
+                <div class="modal-footer">
+                    <button type="button" class="btn btn-default" data-dismiss="modal">取消</button>
+                    <button type="button" class="btn btn-success" style="background-color:#2fd6d0; border: none" onclick="Save()">保存</button>
+                </div>
+            </div><!-- /.modal-content -->
+        </div><!-- /.modal -->
+    </div>
+</body>
+
+
+<script src="http://cdn.static.runoob.com/libs/jquery/2.1.1/jquery.min.js"></script>
+<script src="http://cdn.static.runoob.com/libs/bootstrap/3.3.7/js/bootstrap.min.js"></script>
+<script>
+    $("#myModal").click(function(event) {
+        $('#myModal_output').modal('show');
+/* Act on the event */});
+
+
+</script>
+
+</html>
